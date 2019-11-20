@@ -14,12 +14,14 @@ brd = (()=>{
 		$.when(
 		$.getScript(brdvue_js),
 		$.getScript(navi_js))
-		.done(()=>{	setContentView()})
+		.done(()=>{	
+			setContentView()
+			navi.onCreate()})
 	}
 	let setContentView=()=>{
 		$('head').html(brd_vue.brd_head)
 		$('body').html(brd_vue.brd_body)
-		navi.onCreate()
+
 	}
 	return {onCreate}
 })()
